@@ -1,6 +1,25 @@
-pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
-plugins { id("com.facebook.react.settings") }
-extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+pluginManagement { 
+    includeBuild("../node_modules/@react-native/gradle-plugin") 
+}
+
+plugins { 
+    id("com.facebook.react.settings") 
+}
+
+extensions.configure(com.facebook.react.ReactSettingsExtension) { ex -> 
+    ex.autolinkLibrariesFromCommand() 
+}
+
 rootProject.name = 'ReelMaker1000'
+
 include ':app'
-includeBuild('../node_modules/@react-native/gradle-plugin')
+
+// Include your React Native packages
+include(':react-native-gallery-manager') // Add this line
+project(':react-native-gallery-manager').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-gallery-manager/android')
+
+// Include any other necessary modules, if applicable
+// Ensure to remove any unnecessary code
+// If you don't have the viewpager module, comment it out
+// include(':react-native-community_viewpager') // Example, adjust according to your needs
+// project(':react-native-community_viewpager').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/viewpager/android')

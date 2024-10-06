@@ -1,3 +1,20 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react", // or "react-native"
+    "esModuleInterop": true,
+    "skipLibCheck": true, // Optional, can help avoid type-checking errors in libraries
+    "strict": true, // Optional, enable strict type-checking options
+    "noEmit": true // Optional, to not emit any output files
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "index.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js"
+  ]
 }
